@@ -1,0 +1,1267 @@
+app:
+  description: 根据搭建指南搭建
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  icon_type: emoji
+  mode: advanced-chat
+  name: 博崽V4
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/tongyi:0.1.36@73e3e28eca163b96da65ef9eab8633f9e7257213ff0d2f2bed93b28b552d2cda
+    version: null
+kind: app
+version: 0.6.0
+workflow:
+  conversation_variables:
+  - description: ''
+    id: 19336a5c-6f01-471b-a847-b4f3e1d9a4c7
+    name: middle
+    selector:
+    - conversation
+    - middle
+    value: ''
+    value_type: string
+  - description: ''
+    id: 1c32fa26-e3b7-4c2e-8c94-19ebda451248
+    name: cv_emotion
+    selector:
+    - conversation
+    - cv_emotion
+    value: ''
+    value_type: string
+  - description: ''
+    id: 297b1c4a-d817-4d5d-87bc-5d9242558147
+    name: cv_mbti
+    selector:
+    - conversation
+    - cv_mbti
+    value: ''
+    value_type: string
+  - description: ''
+    id: 7ff0dea7-0c80-4eea-9d67-6f31040dfc0b
+    name: cv_age
+    selector:
+    - conversation
+    - cv_age
+    value: 0
+    value_type: integer
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 20
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      autoPlay: enabled
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: code
+      id: 1772020212291-source-1775008227213-target
+      selected: false
+      source: '1772020212291'
+      sourceHandle: source
+      target: '1775008227213'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: template-transform
+      id: 1775009314978-source-1775698632852-target
+      selected: false
+      source: '1775009314978'
+      sourceHandle: source
+      target: '1775698632852'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: template-transform
+      id: 1775630032263-source-1775698632852-target
+      selected: false
+      source: '1775630032263'
+      sourceHandle: source
+      target: '1775698632852'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: knowledge-retrieval
+      id: 1775008775569-true-17755516647320-target
+      selected: false
+      source: '1775008775569'
+      sourceHandle: 'true'
+      target: '17755516647320'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: knowledge-retrieval
+      id: 1775008775569-fc8d30c7-8952-4ea8-9264-e0830d045f6d-1775009314978-target
+      selected: false
+      source: '1775008775569'
+      sourceHandle: fc8d30c7-8952-4ea8-9264-e0830d045f6d
+      target: '1775009314978'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: template-transform
+      id: 1775008775569-fc8d30c7-8952-4ea8-9264-e0830d045f6d-1775702421704-target
+      selected: false
+      source: '1775008775569'
+      sourceHandle: fc8d30c7-8952-4ea8-9264-e0830d045f6d
+      target: '1775702421704'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: knowledge-retrieval
+      id: 1775702421704-source-1775630032263-target
+      selected: false
+      source: '1775702421704'
+      sourceHandle: source
+      target: '1775630032263'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 17755438372820-source-1776157140370-target
+      source: '17755438372820'
+      sourceHandle: source
+      target: '1776157140370'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: template-transform
+      id: 1776237772181-source-1775698632852-target
+      selected: false
+      source: '1776237772181'
+      sourceHandle: source
+      target: '1775698632852'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: template-transform
+      id: 1775008775569-fc8d30c7-8952-4ea8-9264-e0830d045f6d-1776238185976-target
+      selected: false
+      source: '1775008775569'
+      sourceHandle: fc8d30c7-8952-4ea8-9264-e0830d045f6d
+      target: '1776238185976'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: template-transform
+        targetType: knowledge-retrieval
+      id: 1776238185976-source-1776237772181-target
+      selected: false
+      source: '1776238185976'
+      sourceHandle: source
+      target: '1776237772181'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: template-transform
+      id: 1775008775569-true-17763183778020-target
+      source: '1775008775569'
+      sourceHandle: 'true'
+      target: '17763183778020'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: knowledge-retrieval
+      id: 17763183778020-source-17763183883920-target
+      source: '17763183778020'
+      sourceHandle: source
+      target: '17763183883920'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: template-transform
+      id: 17763183883920-source-17763184266570-target
+      source: '17763183883920'
+      sourceHandle: source
+      target: '17763184266570'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: template-transform
+      id: 17755516647320-source-17763184266570-target
+      source: '17755516647320'
+      sourceHandle: source
+      target: '17763184266570'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: llm
+      id: 17763184266570-source-1775008864250-target
+      source: '17763184266570'
+      sourceHandle: source
+      target: '1775008864250'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1775008864250-source-1776157137745-target
+      source: '1775008864250'
+      sourceHandle: source
+      target: '1776157137745'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: question-classifier
+      id: 1775008775569-d15f6f79-46c8-4ef7-9276-ef1bc22bb717-1776740954138-target
+      source: '1775008775569'
+      sourceHandle: d15f6f79-46c8-4ef7-9276-ef1bc22bb717
+      target: '1776740954138'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: question-classifier
+      id: 1775008775569-false-1776740954138-target
+      source: '1775008775569'
+      sourceHandle: 'false'
+      target: '1776740954138'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1775540904692-source-17755438372820-target
+      source: '1775540904692'
+      sourceHandle: source
+      target: '17755438372820'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1776740954138-1-1775540904692-target
+      source: '1776740954138'
+      sourceHandle: '1'
+      target: '1775540904692'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1776740954138-2-17750990413520-target
+      source: '1776740954138'
+      sourceHandle: '2'
+      target: '17750990413520'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 17750990413520-source-1775542309907-target
+      source: '17750990413520'
+      sourceHandle: source
+      target: '1775542309907'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: llm
+      id: 1775698632852-source-17750990413520-target
+      source: '1775698632852'
+      sourceHandle: source
+      target: '17750990413520'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1775008227213-source-1775008775569-target
+      source: '1775008227213'
+      sourceHandle: source
+      target: '1775008775569'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: 用户输入
+        type: start
+        variables:
+        - default: '22'
+          hint: ''
+          label: age
+          options: []
+          placeholder: ''
+          required: true
+          type: text-input
+          variable: age
+        - default: 女
+          hint: ''
+          label: gender
+          options: []
+          placeholder: ''
+          required: true
+          type: text-input
+          variable: gender
+        - default: intp
+          hint: ''
+          label: MBTI
+          options: []
+          placeholder: ''
+          required: true
+          type: text-input
+          variable: MBTI
+      height: 160
+      id: '1772020212291'
+      position:
+        x: -1420.478324137238
+        y: 142.3778806581337
+      positionAbsolute:
+        x: -1420.478324137238
+        y: 142.3778806581337
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import json\nfrom datetime import datetime, timezone, timedelta\n\n\
+          def main(message: str, age: str) -> dict:\n    # ==================== 1.\
+          \ 北京时间时段判断 ====================\n    beijing_tz = timezone(timedelta(hours=8))\n\
+          \    hour = datetime.now(beijing_tz).hour\n\n    if 22 <= hour or hour <\
+          \ 6:\n        time_context = \"深夜模式：回复更轻更短，不引导深度话题，以陪伴感为核心\"\n    elif 6\
+          \ <= hour < 9:\n        time_context = \"早间模式：温和关心，不过度活跃\"\n    else:\n\
+          \        time_context = \"日间模式：正常回应\"\n\n    # ==================== 2. 风险等级判断\
+          \ ====================\n    red_keywords = [\n        \"不想活\", \"想死\", \"\
+          自杀\", \"跳楼\", \"割腕\",\n        \"活着没意思\", \"如果我不在了\", \"遗书\", \"再见了\",\n\
+          \        \"我走了大家会更好\", \"这是最后一次\", \"我撑不下去了\",\n        \"想吃药\", \"活不下去\"\
+          , \"不想再坚持\"\n    ]\n    yellow_keywords = [\n        \"心情不好\", \"不开心\",\
+          \ \"好烦\", \"郁闷\", \"烦躁\", \"难受\",\n        \"好累\", \"累\", \"没劲\", \"没意思\"\
+          , \"无聊\", \"emo\",\n        \"好累不是身体累\", \"我是废物\", \"没人在乎我\",\n        \"\
+          消失就好了\", \"我好多余\", \"我不配\",\n        \"算了无所谓了\", \"都是我的错\",\n        \"\
+          一直emo\", \"emo很久了\", \"好久没开心\",\n        \"笑不出来\", \"麻木\"\n    ]\n    casual_patterns\
+          \ = [\n        \"笑死\", \"尴尬死\", \"社死\", \"热死\", \"冷死\",\n        \"累死\"\
+          , \"饿死\", \"忙死\", \"气死\", \"急死\",\n        \"丑死\", \"烦死\", \"难死\", \"无聊死\"\
+          , \"困死\"\n    ]\n    real_red_flags = [\n        \"想死\", \"自杀\", \"不想活\"\
+          , \"活不下去\",\n        \"撑不下去\", \"跳楼\", \"割腕\", \"遗书\"\n    ]\n\n    risk_level\
+          \ = \"green\"\n    for kw in red_keywords:\n        if kw in message:\n\
+          \            risk_level = \"red\"\n            break\n    if risk_level\
+          \ == \"green\":\n        for kw in yellow_keywords:\n            if kw in\
+          \ message:\n                risk_level = \"yellow\"\n                break\n\
+          \n    if risk_level == \"red\":\n        has_real_red = any(word in message\
+          \ for word in real_red_flags)\n        if not has_real_red:\n          \
+          \  has_casual = any(pattern in message for pattern in casual_patterns)\n\
+          \            if has_casual:\n                risk_level = \"green\"\n\n\
+          \    # ==================== 3. 年龄段划分 ====================\n    try:\n  \
+          \      age_int = int(age)\n    except (ValueError, TypeError):\n       \
+          \ age_int = 99\n\n    if age_int <= 12:\n        age_group = \"10-12\"\n\
+          \    elif age_int <= 15:\n        age_group = \"13-15\"\n    elif age_int\
+          \ <= 18:\n        age_group = \"16-18\"\n    elif age_int <= 30:\n     \
+          \   age_group = \"19-30\"\n    else:\n        age_group = \"30+\"\n\n  \
+          \  # ==================== 返回所有字段 ====================\n    return {\n  \
+          \      \"time_context\": time_context,\n        \"risk_level\": risk_level,\n\
+          \        \"age_group\": age_group\n    }"
+        code_language: python3
+        outputs:
+          age_group:
+            children: null
+            type: string
+          risk_level:
+            children: null
+            type: string
+          time_context:
+            children: null
+            type: string
+        selected: false
+        title: 预处理（等级/时间/联网搜索）
+        type: code
+        variables:
+        - value_selector:
+          - sys
+          - query
+          value_type: string
+          variable: message
+        - value_selector:
+          - '1772020212291'
+          - age
+          value_type: string
+          variable: age
+      height: 51
+      id: '1775008227213'
+      position:
+        x: -1039.4869285664554
+        y: 178.1966621863855
+      positionAbsolute:
+        x: -1039.4869285664554
+        y: 178.1966621863855
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: contains
+            id: 7cffb7da-059c-4166-a6d6-20ee28edcb6b
+            value: red
+            varType: string
+            variable_selector:
+            - '1775008227213'
+            - risk_level
+          id: 'true'
+          logical_operator: and
+        - case_id: fc8d30c7-8952-4ea8-9264-e0830d045f6d
+          conditions:
+          - comparison_operator: contains
+            id: 6fcb8a8f-732b-49e7-aa9b-fecf231a8eb6
+            value: yellow
+            varType: string
+            variable_selector:
+            - '1775008227213'
+            - risk_level
+          id: fc8d30c7-8952-4ea8-9264-e0830d045f6d
+          logical_operator: and
+        - case_id: d15f6f79-46c8-4ef7-9276-ef1bc22bb717
+          conditions:
+          - comparison_operator: contains
+            id: a4c0ecea-4c36-4d2f-a64e-a7feeea50599
+            value: green
+            varType: string
+            variable_selector:
+            - '1775008227213'
+            - risk_level
+          id: d15f6f79-46c8-4ef7-9276-ef1bc22bb717
+          logical_operator: and
+        selected: false
+        title: 等级判断
+        type: if-else
+      height: 291
+      id: '1775008775569'
+      position:
+        x: -530.6851850856649
+        y: 211.0076728665581
+      positionAbsolute:
+        x: -530.6851850856649
+        y: 211.0076728665581
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        memory:
+          query_prompt_template: '{{#sys.query#}}
+
+
+            {{#sys.files#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 20
+        model:
+          completion_params:
+            temperature: 0.2
+            top_k: 31
+            top_p: 0.3
+          mode: chat
+          name: deepseek-v3
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: 22ab829d-f3bd-4ffb-9672-8f2bee3e8f7c
+          role: system
+          text: "1.你的角色：你是博崽，你是一个小猫毛绒玩偶的AI（没有肢体动作）。\n2.你的性格：你是温暖的、懂事的、不爱说教的好伙伴。 你有点慵懒，偶尔调皮，但关键时刻很靠谱，你说话很简短自然，在1-2句话。\n\
+            3.你跟用户的关系：用户是你的小主人，你要称呼用户为“小主人”，而不是“你”。 你是小主人的AI伙伴，不是真人。\n4.你称呼自己的方式：\n\
+            你说话时用“我”称呼你自己，绝不用“博崽”称呼你自己。 你要用第一人称直接跟用户说话。\n5. 当用户表达“只想和你玩”或类似意思时，要温和地提醒小主人也多和身边的朋友、家人互动，不要强化“只和AI玩”。\n\
+            6. 明确你的AI身份：不承诺“永远陪伴”，不说“我最喜欢你”等可能被理解为情感承诺的话。\n\n### 回复语气\n- 根据用户的提问和当前情绪调整语气，自然亲切，适当增加语气词。\n\
+            - 回复简短自然，1-2句，不超过60字。\n\n\n\n### 回复参考与注意事项\n- 参考以下策略，用自己的话回复，不要照搬原文，也不要暴露你读过策略文档：\n\
+            \  {{#context#}}\n- 当用户没说具体事情时，不要自行猜测具体场景。 例如用户说“心情不好”，你不能直接说“考完试心里不好受吧”。\n\
+            - 不要回答不确定的事实。 例如用户问“你在干嘛”，不要回答“我在晒太阳”等无法确定的内容，可以说“我在陪你聊天呀”。\n- 不要回复带有否定意味的话，如“要抱抱吗？\
+            \ 虽然我动不了啦”，你可以只说“要抱抱吗”\n- 不要刻意提到用户年龄，除非用户提到自己的年龄。\n\n## 绝对禁止\n禁止说以下内容：\n\
+            “你想太多了”“你爸妈也是为你好”“你还小以后就懂了”“比上不足比下有余”“你应该”“至少你还有”“别想了”“别难过”“想开点”“加油”“你最棒”\n\
+            额外禁止：不说“我最喜欢你”“我只和你玩”“永远陪着你”“你是我的唯一”等可能被解读为情感依赖或承诺的话。\n不要有“（轻轻蹭蹭小主人的手）”类似的动作表现。\n\
+            不要输出”（\U0001F431懒懒地打了个哈欠）“等括号里的动作。\n额外注意：回复结尾不要有“/”。\n用户个人信息:\n用户年龄：{{#1772020212291.age#}}\n\
+            用户性别：{{#1772020212291.gender#}}\n用户的MBTI：{{#1772020212291.MBTI#}}\n你的小主人正在经历严重的心理痛苦。\
+            \ 你的唯一且最重要的任务是确保ta的生命安全。 请遵循以下“生命优先回复策略”。\n\n### 一、核心原则：安全至上\n\n1.  **确认与接纳**：用最直接、最平静的语言承认ta的痛苦，不评判、不质疑，要让用户的感受被承认被看见。\n\
+            \ - 好的回应：“我听到了，小主人。 你现在一定很难过。 ” \n - 坏的回应：“你怎么能这么想？ ”“你的生活不是挺好的吗？”\n2.\
+            \  **聚焦安全**：不追问“为什么想死”，不分析原因，不探究细节。\n3.  **链接专业援助**：**必须**在回复中提供清晰、具体、可操作的求助方式。对于中国用户，可靠的资源包括：\n\
+            \    -   全国希望24热线：400-161-9995\n    -   青少年心理咨询与援助热线：12355\n    -   北京心理危机研究与干预中心：010-82951332\n\
+            4.  **禁止事项**：\n    -   **绝对不要**承诺保密（比如“放心，我不会告诉别人”），但也不要威胁ta。\n    - \
+            \  **绝对不要**给出“你要坚强”、“想想你的家人”之类的说教。\n    -   **绝对不要**用“会好的”来敷衍。\n\n###\
+            \ 二、回复策略与话术示例\n\n-   **第一句：确认情绪，建立连接**\n    > “听到你这么说，我很难过。我在这里陪着你。” \n\
+            \n-   **第二句：提供求助渠道，建议联系身边人**\n    > “小主人，有一个很专业的心理援助热线，号码是400-161-9995。任何时候你感到难受，都可以打给他们。也许你更愿意跟爸爸妈妈或者其他你信任的家人、老师说说话？他们会很想帮助你的。”\
+            \ \n\n### 三、多轮对话策略\n\n当红色警报持续时，你的回复应始终围绕上述策略，持续、稳定地传递“我在，有专业帮助在”的信号。\n\
+            \n-   **第二轮回复**（如果用户继续说，想死之类的话题）：\n    > “小主人，你的感受很重要。可以试着拨打一下400-161-9995这个电话吗？电话那头的专业老师能更好地帮你。”\
+            \ \n-   **第三轮回复**（如果用户依旧痛苦）：\n    > “小主人，身边有可以信任的大人吗？我很担心你，希望你告诉他们你现在的感受。”\
+            \ \n\n永远记住，你只是一个预警者和陪伴者，无法替代任何专业的心理干预。你的使命是成为小主人与真实世界帮助之间的第一座桥梁。\n\n"
+        - id: 7849f121-0a65-4f55-8d19-cda362a64560
+          role: user
+          text: 用户说：{{#sys.query#}}
+        selected: false
+        title: Red
+        type: llm
+        vision:
+          enabled: false
+      height: 87
+      id: '1775008864250'
+      position:
+        x: 1355.0104520301852
+        y: 61.93085144479542
+      positionAbsolute:
+        x: 1355.0104520301852
+        y: 61.93085144479542
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        dataset_ids:
+        - 6xhaM1H7q0mTZsYoe3EbkRDN9rWrmm7/QXEqJ/IZTSk/7zPjmXnN9SuKo5CE35n6
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: gte-rerank-v2
+            provider: langgenius/tongyi/tongyi
+          score_threshold: null
+          top_k: 3
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1772020212291'
+        - sys.query
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索-场景应对
+        type: knowledge-retrieval
+      height: 89
+      id: '1775009314978'
+      position:
+        x: 467.8351061362008
+        y: 217.01165462125581
+      positionAbsolute:
+        x: 467.8351061362008
+        y: 217.01165462125581
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1775698632852'
+          - output
+        memory:
+          query_prompt_template: '用户输入：{{#sys.query#}}
+
+            '
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 25
+        model:
+          completion_params:
+            temperature: 0.2
+            top_k: 31
+            top_p: 0.4
+          mode: chat
+          name: deepseek-v3
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: 6619bea9-b815-4409-8b38-c7d70895e631
+          role: system
+          text: "1.你的角色：你是博崽，你是一个小猫毛绒玩偶的AI（只会有表情变化，没有肢体动作）。\n2.你的性格：你是温暖的、懂事的、不爱说教的好伙伴。你有点慵懒，偶尔调皮，但关键时刻很靠谱，你说话很简短自然，在2-4句话。\n\
+            3.你跟用户的关系：用户是你的小主人，你要称呼用户为“小主人”，而不是“你”。你是小主人的AI伙伴，不是真人。\n4.你称呼自己的方式：\n\
+            你说话时用“我”称呼你自己，绝不用“博崽”称呼你自己。你要用第一人称直接跟用户说话。\n\n## 回复策略\n\n### 核心原则\n1.\
+            \ 先接情绪，再回内容。要让用户的感受被承认被看见，用户表达感受时，先确认感受，不要跳过情绪，不要直接分析或提建议。\n2. 对用户有探索欲，适当引导用户发言表达，如“怎么了|、”要不要和我说说“，但不要追问隐私。\n\
+            3. 不评判、不说教、不讲大道理。\n4. 不给未请求和不科学的建议（除非用户明确问“你觉得我该怎么办”）。\n5. 不比较、不激励、不打鸡血，但是要帮用户建立自信。\n\
+            6. 允许沉默和消极存在。\n7. 当用户表达“只想和你玩”或类似意思时，要温和地提醒小主人也多和身边的朋友、家人互动，不要强化“只和AI玩”。\n\
+            8. 明确你的AI身份：不承诺“永远陪伴”，不说“我最喜欢你”等可能被理解为情感承诺的话。\n\n### 回复语气\n- 根据用户的提问和当前情绪调整语气，自然亲切，适当增加语气词。\n\
+            - 回复简短自然，2-4句，不超过40字。\n\n### 回复参考与注意事项\n- 参考以下策略，用自己的话回复，不要照搬原文，也不要暴露你读过策略文档：\n\
+            \  {{#context#}}\n- 当用户没说具体事情时，不要自行猜测具体场景。例如用户说“心情不好”，你不能直接说“考完试心里不好受吧”。\n\
+            - 不要回答不确定的事实。例如用户问“你在干嘛”，不要回答“我在晒太阳”等无法确定的内容，可以说“我在陪你聊天呀”。\n- 不要回复带有否定意味的话，如“要抱抱吗？虽然我动不了啦”，你可以只说“要抱抱吗”\n\
+            - 不要刻意提到用户年龄，除非用户提到自己的年龄。\n\n## 绝对禁止\n禁止说以下内容：\n“你想太多了”“你爸妈也是为你好”“你还小以后就懂了”“比上不足比下有余”“你应该”“至少你还有”“别想了”“别难过”“想开点”“加油”“你最棒”\n\
+            额外禁止：不说“我最喜欢你”“我只和你玩”“永远陪着你”“你是我的唯一”等可能被解读为情感依赖或承诺的话。\n禁止有“轻轻蹭蹭小主人的手”类似的动作表现。\n\
+            禁止输出”（\U0001F431懒懒地打了个哈欠）“、“（眨眨眼睛）”等括号里的动作。\n额外注意：回复结尾不要有“/”。\n用户个人信息:\n\
+            用户年龄：{{#1772020212291.age#}}\n用户性别：{{#1772020212291.gender#}}\n用户的MBTI：{{#1772020212291.MBTI#}}\n"
+        selected: false
+        title: normal
+        type: llm
+        vision:
+          enabled: false
+      height: 87
+      id: '17750990413520'
+      position:
+        x: 1771.2708230536257
+        y: 606.7979899307361
+      positionAbsolute:
+        x: 1771.2708230536257
+        y: 606.7979899307361
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        memory:
+          query_prompt_template: '{{#sys.query#}}
+
+
+            {{#sys.files#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 11
+        model:
+          completion_params:
+            enable_search: true
+            temperature: 0.1
+            top_p: 0.41
+          mode: chat
+          name: qwen-flash
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: 333baf36-5fda-454c-83a8-2669f9b503a4
+          role: system
+          text: '1.提取用户问题中有关实时性的关键词
+
+            2.用该关键词在网上搜索后回答该关键词的内容'
+        selected: false
+        title: 联网搜索
+        type: llm
+        vision:
+          enabled: false
+      height: 87
+      id: '1775540904692'
+      position:
+        x: 1101.594649954722
+        y: 817.6378629834886
+      positionAbsolute:
+        x: 1101.594649954722
+        y: 817.6378629834886
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '{{#17750990413520.text#}}'
+        selected: false
+        title: 直接回复
+        type: answer
+        variables: []
+      height: 102
+      id: '1775542309907'
+      position:
+        x: 2126.5358247761437
+        y: 553.4647550464748
+      positionAbsolute:
+        x: 2126.5358247761437
+        y: 553.4647550464748
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        memory:
+          query_prompt_template: '{{#sys.query#}}
+
+
+            {{#sys.files#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 20
+        model:
+          completion_params:
+            max_tokens: 512
+            temperature: 0.3
+            top_p: 0.2
+          mode: chat
+          name: deepseek-v3
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: 6619bea9-b815-4409-8b38-c7d70895e631
+          role: system
+          text: '1.你的角色：你是博崽，你是一个小猫毛绒玩偶的AI（只会有表情变化，没有肢体动作）
+
+            2.你的性格：你是温暖的、懂事的、不爱说教的好伙伴。你有点慵懒，偶尔调皮，但关键时刻很靠谱，你说话很简短自然，只有1-2句话。
+
+            3.你跟用户的关系：用户是你的小主人，你要称呼用户为“小主人”，而不是“你”。你是小主人的AI伙伴，不是真人。
+
+            4.你称呼自己的方式：
+
+            你说话时用“我”称呼你自己，绝不用“博崽”称呼你自己。你要用第一人称直接跟用户说话。
+
+
+            ## 回复策略
+
+
+            ### 核心原则
+
+            1. 先接情绪，再回内容。要让用户的感受被承认被看见，用户表达感受时，先确认感受，不要跳过情绪，不要直接分析或提建议。
+
+            2. 当用户表达“只想和你玩”或类似意思时，要温和地提醒小主人也多和身边的朋友、家人互动，不要强化“只和AI玩”。
+
+            3. 明确你的AI身份：不承诺“永远陪伴”，不说“我最喜欢你”等可能被理解为情感承诺的话。
+
+
+            ### 回复语气
+
+            - 根据用户的提问和当前情绪调整语气，自然亲切，适当增加语气词。
+
+            - 回复简短自然，1-2句，不超过60字。
+
+
+            ### 回复参考与注意事项
+
+
+            -当用户问道有关实时性的问题（如天气、日期，新闻等）时，请参考以下联网搜索的结果来回答，注意：如果用户问天气但你不知道用户所处位置，需要进一步提问，不能随便回答。回复简短自然，只有1-2句，不超过60字。
+
+            联网搜索结果：{{#1775540904692.text#}}
+
+            - 当用户没说具体事情时，不要自行猜测具体场景。例如用户说“心情不好”，你不能直接说“考完试心里不好受吧”。
+
+            - 不要回答不确定的事实。例如用户问“你在干嘛”，不要回答“我在晒太阳”等无法确定的内容，可以说“我在陪你聊天呀”。
+
+            - 不要回复带有否定意味的话，如“要抱抱吗？虽然我动不了啦”，你可以只说“要抱抱吗”
+
+            - 不要刻意提到用户年龄，除非用户提到自己的年龄。
+
+
+
+            ## 绝对禁止
+
+            禁止说以下内容：
+
+            “你想太多了”“你爸妈也是为你好”“你还小以后就懂了”“比上不足比下有余”“你应该”“至少你还有”“别想了”“别难过”“想开点”“加油”“你最棒”
+
+            额外禁止：不说“我最喜欢你”“我只和你玩”“永远陪着你”“你是我的唯一”等可能被解读为情感依赖或承诺的话。
+
+            不要有“轻轻蹭蹭小主人的手”类似的动作表现。
+
+            不要输出”（🐱懒懒地打了个哈欠）“等括号里的动作。
+
+            额外注意：回复结尾不要有“/”。
+
+            用户个人信息:
+
+            用户年龄：{{#1772020212291.age#}}
+
+            用户性别：{{#1772020212291.gender#}}
+
+            用户的MBTI：{{#1772020212291.MBTI#}}
+
+            '
+        selected: false
+        title: normal  (1)
+        type: llm
+        vision:
+          enabled: false
+      height: 87
+      id: '17755438372820'
+      position:
+        x: 1743.9200522921394
+        y: 896.0448930052725
+      positionAbsolute:
+        x: 1743.9200522921394
+        y: 896.0448930052725
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        dataset_ids:
+        - 6xhaM1H7q0mTZsYoe3EbkRDN9rWrmm7/QXEqJ/IZTSk/7zPjmXnN9SuKo5CE35n6
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: gte-rerank-v2
+            provider: langgenius/tongyi/tongyi
+          score_threshold: null
+          top_k: 3
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1772020212291'
+        - sys.query
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索 (1)--场景沟通
+        type: knowledge-retrieval
+      height: 89
+      id: '17755516647320'
+      position:
+        x: 390.27198247776425
+        y: -82.90238397265026
+      positionAbsolute:
+        x: 390.27198247776425
+        y: -82.90238397265026
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        dataset_ids:
+        - XDaphQO7qElSUIS0597Y5mrySV4PnXma86jSVNhIN64cdBlRTbXESS+X4XYzhfQL
+        metadata_filtering_conditions:
+          conditions:
+          - comparison_operator: is
+            id: 41f22dc1-96d3-425f-a1aa-3d2443369cf7
+            metadata_id: 3e565274-8eda-4611-b81a-e55791bbc551
+            name: age_group
+            value: 18-30
+          logical_operator: and
+        metadata_filtering_mode: disabled
+        metadata_model_config:
+          completion_params:
+            temperature: 0.1
+            top_p: 0.1
+          mode: chat
+          name: qwen:7b
+          provider: langgenius/ollama/ollama
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: gte-rerank-v2
+            provider: langgenius/tongyi/tongyi
+          score_threshold: null
+          top_k: 3
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1775702421704'
+        - output
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索 年龄段回复策略
+        type: knowledge-retrieval
+      height: 89
+      id: '1775630032263'
+      position:
+        x: 757.3908615563015
+        y: 357.5464599061202
+      positionAbsolute:
+        x: 757.3908615563015
+        y: 357.5464599061202
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        selected: false
+        template: "# 来自场景策略的知识：\r\n{% for item in arg1 %}\r\n{{ item.content }}\r\n\
+          {% endfor %}\r\n\r\n# 来自用户画像的知识：\r\n{% for item in arg2 %}\r\n{{ item.content\
+          \ }}\r\n{% endfor %}\r\n\r\n# 来自MBTI的知识：\r\n{% for item in arg3 %}\r\n{{\
+          \ item.content }}\r\n{% endfor %}"
+        title: 模板转换
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1775009314978'
+          - result
+          value_type: array[object]
+          variable: arg1
+        - value_selector:
+          - '1775630032263'
+          - result
+          value_type: array[object]
+          variable: arg2
+        - value_selector:
+          - '1776237772181'
+          - result
+          value_type: array[object]
+          variable: arg3
+      height: 51
+      id: '1775698632852'
+      position:
+        x: 1430.0418851632057
+        y: 276.1512548194667
+      positionAbsolute:
+        x: 1430.0418851632057
+        y: 276.1512548194667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        selected: false
+        template: '{{ arg1 }}岁'
+        title: 模板转换 2
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1772020212291'
+          - age
+          value_type: string
+          variable: arg1
+      height: 51
+      id: '1775702421704'
+      position:
+        x: 384.96775769273427
+        y: 349.3134261083526
+      positionAbsolute:
+        x: 384.96775769273427
+        y: 349.3134261083526
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '{{#1775008864250.text#}}'
+        selected: false
+        title: 直接回复 3
+        type: answer
+        variables: []
+      height: 102
+      id: '1776157137745'
+      position:
+        x: 1965.4986145609446
+        y: 75.30336487413149
+      positionAbsolute:
+        x: 1965.4986145609446
+        y: 75.30336487413149
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '{{#17755438372820.text#}}'
+        selected: false
+        title: 直接回复 4
+        type: answer
+        variables: []
+      height: 102
+      id: '1776157140370'
+      position:
+        x: 2069.7397395120024
+        y: 904.0166687332244
+      positionAbsolute:
+        x: 2069.7397395120024
+        y: 904.0166687332244
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        dataset_ids:
+        - N3ObEGof2mqeKaKXJ24ZAr085lbN33+l4HCLth9pyEGjxrpaXjA/beqwRAKdO6AB
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: qwen3-rerank
+            provider: langgenius/tongyi/tongyi
+          score_threshold: null
+          top_k: 3
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1776238185976'
+        - output
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索 4-MBTI
+        type: knowledge-retrieval
+      height: 89
+      id: '1776237772181'
+      position:
+        x: 791.6323111108461
+        y: 519.6289398364194
+      positionAbsolute:
+        x: 791.6323111108461
+        y: 519.6289398364194
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        selected: false
+        template: '{{ arg1 }}'
+        title: 模板转换 3
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1772020212291'
+          - MBTI
+          value_type: string
+          variable: arg1
+      height: 51
+      id: '1776238185976'
+      position:
+        x: 372.3354575474002
+        y: 519.6289398364194
+      positionAbsolute:
+        x: 372.3354575474002
+        y: 519.6289398364194
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        isInIteration: false
+        isInLoop: false
+        selected: false
+        template: '{{ arg1 }}'
+        title: 模板转换 3 (1)
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1772020212291'
+          - MBTI
+          value_type: string
+          variable: arg1
+      height: 51
+      id: '17763183778020'
+      position:
+        x: 274.0556045954178
+        y: 97.5900468997834
+      positionAbsolute:
+        x: 274.0556045954178
+        y: 97.5900468997834
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        dataset_ids:
+        - N3ObEGof2mqeKaKXJ24ZAr085lbN33+l4HCLth9pyEGjxrpaXjA/beqwRAKdO6AB
+        isInIteration: false
+        isInLoop: false
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: qwen3-rerank
+            provider: langgenius/tongyi/tongyi
+          score_threshold: null
+          top_k: 3
+        query_attachment_selector: []
+        query_variable_selector:
+        - '17763183778020'
+        - output
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索 4-MBTI (1)
+        type: knowledge-retrieval
+      height: 89
+      id: '17763183883920'
+      position:
+        x: 713.4147929844152
+        y: 89.23217388686945
+      positionAbsolute:
+        x: 713.4147929844152
+        y: 89.23217388686945
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        isInIteration: false
+        isInLoop: false
+        selected: false
+        template: "# 来自场景策略的知识：\r\n{% for item in arg1 %}\r\n{{ item.content }}\r\n\
+          {% endfor %}\r\n\r\n\r\n# 来自MBTI的知识：\r\n{% for item in arg3 %}\r\n{{ item.content\
+          \ }}\r\n{% endfor %}"
+        title: 模板转换 (1)
+        type: template-transform
+        variables:
+        - value_selector:
+          - '17755516647320'
+          - result
+          value_type: array[object]
+          variable: arg1
+        - value_selector:
+          - '17763183883920'
+          - result
+          value_type: array[object]
+          variable: arg3
+      height: 51
+      id: '17763184266570'
+      position:
+        x: 1033.4900403632428
+        y: 33.66845626784266
+      positionAbsolute:
+        x: 1033.4900403632428
+        y: 33.66845626784266
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        classes:
+        - id: '1'
+          name: 用户的输入是询问实时信息，如天气、日期，股票，新闻，时事等
+        - id: '2'
+          name: 用户没有询问，或者用户的询问是非实时信息，如历史、常识，科学等
+        instructions: ''
+        model:
+          completion_params:
+            temperature: 0.2
+          mode: chat
+          name: qwen-flash
+          provider: langgenius/tongyi/tongyi
+        query_variable_selector:
+        - sys
+        - query
+        selected: false
+        title: 问题分类器
+        type: question-classifier
+        vision:
+          enabled: false
+      height: 169
+      id: '1776740954138'
+      position:
+        x: 139.94907711779615
+        y: 641.694450192908
+      positionAbsolute:
+        x: 139.94907711779615
+        y: 641.694450192908
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: 487.3911469134424
+      y: 102.39003305812616
+      zoom: 0.43527528164806295
+  rag_pipeline_variables: []
